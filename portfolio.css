@@ -1,0 +1,366 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ສີທີ່ໃຊ້ທົ່ວໜ້າເວັບ */
+:root {
+  --accent: #e8a126;
+  --hero-bg: #1b1b1b;
+  --about-bg: #2e2e2e;
+  --service-bg: #262626;
+  --text-muted: #c9c9c9;
+  --line: #4a4a4a;
+}
+
+body {
+  background: var(--service-bg);
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  /* ປ້ອງກັນບໍ່ໃຫ້ Animation ທີ່ເລື່ອນເຂົ້າມາ ເຮັດໃຫ້ເກີດ Scrollbar ທາງຂວາງ */
+  overflow-x: clip;
+}
+
+/* ສີເນັ້ນສຳລັບຂໍ້ຄວາມທີ່ຕ້ອງການເນັ້ນ (ໃຊ້ຮ່ວມກັນ) */
+.highlight {
+  color: var(--accent); 
+}
+
+/* ຫົວຂໍ້ຂອງແຕ່ລະສ່ວນ (ໃຊ້ຮ່ວມກັນ) */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-title h2 {
+  color: var(--accent);
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* Icon ນ້ອຍ ພ້ອມເສັ້ນຢູ່ທັງສອງຂ້າງ */
+.title-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--accent);
+  font-size: 12px;
+}
+.title-line::before,
+.title-line::after {
+  content: "";
+  width: 32px;
+  height: 1px;
+  background: var(--accent);
+}
+
+/* hero css */
+.hero-container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 85vh;
+  /* ຈຳກັດເນື້ອຫາໃຫ້ກວ້າງບໍ່ເກີນ 1140px ຢູ່ໜ້າຈໍກວ້າງ */
+  padding: 40px max(24px, calc((100% - 1140px) / 2)) 0;
+  background: var(--hero-bg);
+  color: white;
+}
+.hero-left-container{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px;
+  padding-bottom: 40px;
+}
+.hero-left-container p{
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 500;
+}
+.hero-left-container h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(40px, 6.5vw, 72px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+.hero-right-container {
+  width: 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.hero-right-container img{
+  display: block;
+  width: 100%;
+  max-width: 428px;
+  height: auto;
+  /* ເຮັດໃຫ້ດ້ານລຸ່ມຂອງຮູບຈາງຫາຍເຂົ້າກັບພື້ນຫຼັງສີເຂັ້ມ */
+  -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+}
+
+/* about css */
+.about-container {
+  background: var(--about-bg);
+  padding: 70px max(24px, calc((100% - 1140px) / 2));
+}
+
+/* ຮູບ ແລະ ຂໍ້ຄວາມຢູ່ຄຽງຂ້າງກັນ */
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.about-left-container {
+  width: 40%;
+  flex-shrink: 0;
+}
+
+.about-left-container img{
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  /* ສະແດງຫົວ ແລະ ບ່າ ໃນກອບສີ່ຫຼ່ຽມຈັດຕຸລັດ */
+  object-fit: cover;
+  object-position: top;
+  background: #9a9da1;
+  /* ກອບສີທຶບທີ່ເຫຼື່ອມອອກມາທາງຫຼັງຮູບ */
+  box-shadow: 8px 8px 0 #3c3c3c;
+}
+
+.about-right-container {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 14px;
+}
+.about-right-container h3 {
+  font-family: "Raleway", sans-serif;
+  font-size: clamp(20px, 2.4vw, 26px);
+  font-weight: 600;
+  line-height: 1.35;
+}
+.about-right-container p{
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ແຖວຄຳທັກທາຍ ພ້ອມເສັ້ນສັ້ນສີເນັ້ນຢູ່ກ້ອງ */
+.about-right-container .about-hello {
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+}
+.about-hello::after {
+  content: "";
+  display: block;
+  width: 68px;
+  height: 2px;
+  margin-top: 8px;
+  background: var(--accent);
+}
+
+/* Button */
+.about-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 8px;
+}
+.btn {
+  min-width: 160px;
+  padding: 12px 24px;
+  border: 2px solid var(--accent);
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.btn-filled {
+  background: var(--accent);
+  color: #1b1b1b;
+}
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+}
+/* ສະຫຼັບສີຂອງ Button ທັງສອງແບບ ເມື່ອເອົາເມົາສ໌ໄປວາງ */
+.btn-filled:hover {
+  background: transparent;
+  color: var(--accent);
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: #1b1b1b;
+}
+
+/* service css */
+.service-container {
+  background: var(--service-bg);
+  padding: 70px max(24px, calc((100% - 1140px) / 2));
+}
+
+/* Card 4 ອັນ ໃນແຖວດຽວ */
+.service-right-container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* ເສັ້ນບາງທີ່ເຊື່ອມ Icon ທັງ 4 */
+.service-right-container::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1px;
+  background: var(--line);
+}
+
+.service-card{
+  position: relative;
+  text-align: center;
+}
+.service-card i {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 18px;
+  /* ພື້ນຫຼັງສີທຶບຊ່ວຍບັງເສັ້ນເຊື່ອມທີ່ຢູ່ຫຼັງ Icon */
+  background: var(--service-bg);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 16px;
+}
+.service-card h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 14px;
+}
+.service-card p {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Animation ຕອນ Scroll: portfolio.js ເປັນຜູ້ເພີ່ມ js-ready ດັ່ງນັ້ນຖ້າບໍ່ມີ JavaScript ໜ້າເວັບກໍຍັງສະແດງຢູ່ */
+.js-ready .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+/* ທິດທາງທີ່ເລື່ອນເຂົ້າມາ */
+.js-ready .from-left {
+  transform: translateX(-60px);
+}
+.js-ready .from-right {
+  transform: translateX(60px);
+}
+/* ສະຖານະສຸດທ້າຍ: ເພີ່ມເມື່ອ Element ເລື່ອນເຂົ້າມາໃນໜ້າຈໍ */
+.js-ready .reveal.visible {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* ໃຫ້ Card ບໍລິການປາກົດຂຶ້ນເທື່ອລະອັນ */
+.service-card:nth-child(2) {
+  transition-delay: 0.15s;
+}
+.service-card:nth-child(3) {
+  transition-delay: 0.3s;
+}
+.service-card:nth-child(4) {
+  transition-delay: 0.45s;
+}
+
+/* ປິດ Animation ສຳລັບຜູ້ທີ່ຕັ້ງຄ່າຫຼຸດການເຄື່ອນໄຫວ */
+@media (prefers-reduced-motion: reduce) {
+  .js-ready .reveal,
+  .js-ready .reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Responsive: ແທັບເລັດ ແລະ ໂທລະສັບ */
+@media (max-width: 768px) {
+  /* ຈັດ Hero ເປັນແນວຕັ້ງ: ຂໍ້ຄວາມຢູ່ເທິງຮູບ */
+  .hero-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .hero-left-container,
+  .hero-right-container {
+    width: 100%;
+  }
+  .hero-left-container {
+    align-items: center;
+    text-align: center;
+    padding: 30px 0;
+  }
+  .hero-right-container img {
+    max-width: 340px;
+  }
+
+  /* ຈັດ About ເປັນແນວຕັ້ງ: ຮູບຢູ່ເທິງຂໍ້ຄວາມ */
+  .about-content {
+    flex-direction: column;
+  }
+  .about-left-container {
+    width: 100%;
+    max-width: 380px;
+  }
+  .about-container,
+  .service-container {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  /* Card ບໍລິການ 2 ອັນຕໍ່ແຖວ ແລະ ເຊື່ອງເສັ້ນເຊື່ອມ ເພາະບໍ່ພໍດີແລ້ວ */
+  .service-right-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .service-right-container::before {
+    display: none;
+  }
+}
+
+/* Responsive: ໂທລະສັບຈໍນ້ອຍ */
+@media (max-width: 480px) {
+
+  /* Card ບໍລິການ 1 ອັນຕໍ່ແຖວ */
+  .service-right-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Button ເຕັມຄວາມກວ້າງ */
+  .btn {
+    flex: 1;
+  }
+}

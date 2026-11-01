@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Lao+Looped:wght@100..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Playwrite+RO:wght@100..400&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "Noto Sans Lao Looped", sans-serif;
+}
+
+body {
+   background: linear-gradient(135deg, #fc852a 0%, #ff2492 100%);
+   min-height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 20px;
+}
+
+.container {
+   background: white;
+   border-radius: 15px;
+   padding: 30px;
+   width: 100%;
+   max-width: 700px;
+   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+   color: #333;
+   text-align: center;
+   margin-bottom: 30px;
+   font-family: "Phetsarath OT" !important;
+}
+
+.input-container {
+   display: flex;
+   gap: 10px;
+   margin-bottom: 20px;
+}
+
+#taskInput {
+   flex: 1;
+   padding: 12px;
+   border: 2px solid #ddd;
+   border-radius: 8px;
+   font-size: 16px;
+}
+
+#taskInput:focus {
+   outline: none;
+   border-color: #667eea;
+}
+
+#addBtn {
+   padding: 12px 24px;
+   background: green;
+   color: white;
+   border: none;
+   border-radius: 15px;
+   cursor: pointer;
+   font-size: 16px;
+   transition: background 4s;
+}
+
+#addBtn:hover {
+   background: #5568d3;
+}
+
+/* Button ອັບເດດ: ສີຟ້າ ຕອນກຳລັງແກ້ໄຂ Task */
+#addBtn.update-btn {
+   background: #007bff;
+   transition: background 0.3s;
+}
+
+/* ສີຟ້າເຂັ້ມ ເມື່ອເອົາເມົາສ໌ໄປວາງເທິງ Button ອັບເດດ */
+#addBtn.update-btn:hover {
+   background: #0056b3;
+}
+
+#taskList {
+   list-style: none;
+}
+
+.task-item {
+   background: #f8f9fa;
+   padding: 15px;
+   margin-bottom: 10px;
+   border-radius: 8px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   transition: transform 0.2s;
+}
+
+.task-item:hover {
+   transform: translateY(5px);
+}
+
+.task-item.completed {
+   opacity: 0.6;
+   text-decoration: line-through;
+}
+
+.task-text {
+   flex: 1;
+   cursor: pointer;
+}
+
+/* Button ແກ້ໄຂ ໃນແຕ່ລະ Task */
+.edit-btn {
+   background: #007bff;
+   color: white;
+   border: none;
+   padding: 8px 16px;
+   border-radius: 5px;
+   cursor: pointer;
+   margin: 0 8px;
+   transition: background 0.3s;
+}
+
+/* ສີຟ້າເຂັ້ມ ເມື່ອເອົາເມົາສ໌ໄປວາງເທິງ Button ແກ້ໄຂ */
+.edit-btn:hover {
+   background: #0056b3;
+}
+
+.delete-btn {
+   background:gray;
+   color: white;
+   border: none;
+   padding: 8px 16px;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background 0.3s;
+}
+
+.delete-btn:hover {
+   background: red;
+}
+
